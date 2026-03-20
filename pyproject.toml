@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "servicessimulatedsearchfield"
+version = "0.1.0"
+description = ""
+authors = ["RomanL91 <dev_roman91@mail.ru>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+uvicorn = "^0.42.0"
+httpx = "^0.28.1"
+meilisearch-python-sdk = "^7.0.4"
+fastapi = "^0.115.0"
+pydantic-settings = "^2.7"
+apscheduler = "^3.11"
+pandas = "^2.2"
+xlrd = "^2.0"
+openpyxl = "^3.1"
+arq = "^0.26"
+lxml = "^5.3"
+python-calamine = "^0.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
