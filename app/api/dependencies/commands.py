@@ -5,7 +5,7 @@ from app.domain.strategies.sync_provider import SyncProviderStrategy
 from app.infra.parsers.registry import PARSER_REGISTRY
 from app.infra.strategy_factory import sync_strategy_factory
 
-_PROVIDERS = {p.provider_name: p for p in load_all_providers()}
+_PROVIDERS = {p.provider_name.upper(): p for p in load_all_providers()}
 
 
 def get_sync_strategy(provider_name: str) -> SyncProviderStrategy:

@@ -1,0 +1,30 @@
+services:
+  api:
+    build: .
+    container_name: simulated_search_field_api
+    command: uvicorn app.main:app --host 0.0.0.0 --port 7899
+    ports:
+      - "7899:7899"
+    env_file:
+      - .env
+    volumes:
+      - ./providers:/app/providers:ro
+    networks:
+      - metiz_network
+    restart: unless-stopped
+
+  worker:
+    build: .
+    container_name: simulated_search_field_worker
+    command: arq app.workers.settings.WorkerSettings
+    env_file:
+      - .env
+    volumes:
+      - ./providers:/app/providers:ro
+    networks:
+      - metiz_network
+    restart: unless-stopped
+
+networks:
+  metiz_network:
+    external: true
