@@ -6,5 +6,5 @@ from app.infra.parsers.elkab_ural import ElkabUralParser
 # Добавлять сюда при каждом новом провайдере.
 PARSER_REGISTRY: dict[str, type[BaseXLSParser]] = {
     "ELKAB_URAL": ElkabUralParser,
-    "ELECTROKABEL": ElektrokabelParser,
+    "ELEKTROKABEL": ElektrokabelParser,
 }
